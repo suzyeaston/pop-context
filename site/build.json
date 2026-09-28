@@ -1,0 +1,7 @@
+{
+  "project": "POP//CONTEXT",
+  "version": "0.1.0",
+  "status": "public research build",
+  "stage": "interface + architecture",
+  "next": "URL ingest, transcript, scenes, semantic audio, synchronized analysis.json"
+}
