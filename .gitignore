@@ -7,9 +7,11 @@ __pycache__/
 .env.*
 !.env.example
 
-# downloaded/analyzed media
-data/*
-!data/.gitkeep
+models/*
+!models/.gitkeep
+workspace/*
+!workspace/.gitkeep
+
 *.mp4
 *.mov
 *.mkv
@@ -17,17 +19,5 @@ data/*
 *.wav
 *.mp3
 *.m4a
-
-# generated model/output artifacts
-output/
-outputs/
-frames/
-transcripts/
-analysis.json
-
-# local model weights
-models/
-*.safetensors
-*.bin
-*.pt
-*.pth
+*.aac
+*.flac

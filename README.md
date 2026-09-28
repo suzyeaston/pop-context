@@ -2,100 +2,86 @@
 
 **Teach machines to hear culture, not just words.**
 
-POP//CONTEXT is an experimental multimodal cultural-intelligence system by [Suzy Easton](https://www.suzyeaston.ca/).
+POP//CONTEXT is a public, local-first experiment by [Suzy Easton](https://www.suzyeaston.ca/) exploring how software might understand audiovisual material as **cultural meaning**, rather than treating video as a transcript with pictures attached.
 
-The project begins with a deceptively simple input:
+## Current milestone: local evidence pipeline
 
-```text
-video URL
-```
-
-and works toward an evidence-based interpretation of:
-
-- what is being said,
-- what is being heard beyond speech,
-- what is happening visually,
-- which people, songs, films, memes, objects, aesthetics, and cultural references are present,
-- and how those layers alter the meaning of a moment.
-
-## Core idea
+The repository is public. The analysis itself runs locally.
 
 ```text
-VIDEO
-  ↓
-INGEST
-video + audio + transcript + metadata
-  ↓
-PERCEPTION
-speech | music | sound | scenes | objects | text
-  ↓
-TIMELINE
-everything synchronized by timestamp
-  ↓
-CULTURAL MEMORY
-works | people | events | memes | references | associations
-  ↓
-INTERPRETATION
-literal | emotional | cultural | uncertain/inferred
+VIDEO URL
+   ↓
+short local media window
+   ↓
+speech + representative frames
+   ↓
+timestamped evidence
+   ↓
+analysis.json + local report
 ```
 
-The system deliberately separates **observation** from **interpretation**. A model should be able to say what evidence it saw, where it occurred, what reference it believes is present, and how confident it is.
+The current v0.1 deliberately stops **before** cultural AI interpretation. First we make perception inspectable and reproducible.
 
-## v0.1 goal
-
-Produce a synchronized `analysis.json` for one video containing:
-
-- timestamped transcript,
-- scene boundaries,
-- representative frames,
-- semantic descriptions of non-speech audio,
-- visual descriptions,
-- detected/reference candidates,
-- evidence and confidence,
-- higher-level interpretation.
-
-See [`docs/architecture.md`](docs/architecture.md).
-
-## Site
-
-GitHub Pages deploys automatically from `main`:
-
-https://suzyeaston.github.io/pop-context/
-
-The first page is intentionally a project/prototype interface. Later it can become the public front end while the analysis engine runs locally or through an API.
-
-## Local development
-
-Python 3.11+ recommended.
+## Mac setup
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -e .
-python -m pop_context.cli --help
+git clone https://github.com/suzyeaston/pop-context.git
+cd pop-context
+./scripts/install-local.sh
 ```
 
-Static site:
+Then:
 
 ```bash
-python3 -m http.server 8080 --directory site
+./run-local.sh "https://www.youtube.com/watch?v=..." --duration 30
 ```
 
-Then open http://localhost:8080.
+Diagnostics:
+
+```bash
+./scripts/doctor.sh
+```
+
+## Privacy / repository boundaries
+
+These are intentionally ignored by Git:
+
+```text
+models/
+workspace/
+```
+
+Downloaded media, transcripts, model weights and generated reports stay on the local machine.
+
+## Current output
+
+```text
+workspace/<video-id>/
+├── metadata.json
+├── source.mp4
+├── audio.wav
+├── transcript.json
+├── frames/
+├── analysis.json
+└── report.html
+```
+
+## Architecture
+
+- [`docs/local-first.md`](docs/local-first.md)
+- [`docs/architecture.md`](docs/architecture.md)
 
 ## Roadmap
 
-1. URL → media + metadata
-2. transcript with timestamps
-3. scene detection + representative frames
-4. semantic audio events
-5. unified multimodal timeline
-6. cultural entity/reference memory
+1. **local ingest + transcript + representative frames** ← now
+2. scene-aware sampling
+3. semantic non-speech audio
+4. visual-language perception
+5. synchronized multimodal timeline
+6. cultural memory / retrieval
 7. evidence-based interpretation
-8. searchable visual timeline
-9. local-first model experiments
-10. public demo/API
+8. public demonstration interface
 
-## Status
+## Public site
 
-Very early public research build. Expect sharp edges, strange questions, and rapidly evolving architecture.
+There is an experimental static interface in this repository, but **the local AI application is not being published as a live web service yet**.

@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "pop-context"
 version = "0.1.0"
-description = "Multimodal cultural intelligence for video, audio, language, and pop-culture context."
+description = "Local-first multimodal cultural intelligence for video, audio, language and pop-culture context."
 readme = "README.md"
 requires-python = ">=3.11"
 authors = [
