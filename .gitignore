@@ -1,0 +1,33 @@
+.DS_Store
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.env
+.env.*
+!.env.example
+
+# downloaded/analyzed media
+data/*
+!data/.gitkeep
+*.mp4
+*.mov
+*.mkv
+*.webm
+*.wav
+*.mp3
+*.m4a
+
+# generated model/output artifacts
+output/
+outputs/
+frames/
+transcripts/
+analysis.json
+
+# local model weights
+models/
+*.safetensors
+*.bin
+*.pt
+*.pth

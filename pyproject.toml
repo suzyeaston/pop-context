@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pop-context"
+version = "0.1.0"
+description = "Multimodal cultural intelligence for video, audio, language, and pop-culture context."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+  { name = "Suzy Easton" }
+]
+dependencies = []
+
+[project.scripts]
+pop-context = "pop_context.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["pop_context*"]

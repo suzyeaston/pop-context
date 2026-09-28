@@ -1,0 +1,36 @@
+{
+  "schema_version": "0.1",
+  "source": {
+    "url": "https://example.com/video",
+    "title": "Example video"
+  },
+  "segments": [
+    {
+      "start": 41.2,
+      "end": 48.7,
+      "speech": {
+        "text": "Example dialogue.",
+        "speaker": null
+      },
+      "audio": {
+        "events": [
+          {
+            "label": "ambient synthesizer",
+            "confidence": 0.72
+          }
+        ]
+      },
+      "visual": {
+        "description": "Example visual description.",
+        "visible_text": [],
+        "objects": []
+      },
+      "references": [],
+      "interpretation": {
+        "literal": null,
+        "emotional": null,
+        "cultural": null
+      }
+    }
+  ]
+}
