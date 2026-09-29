@@ -66,6 +66,16 @@ workspace/<video-id>/
 └── report.html
 ```
 
+<!-- SUZY-AI-INTEGRATION -->
+
+## SUZY//AI
+
+POP//CONTEXT is the **observer** inside the broader [SUZY//AI](https://github.com/suzyeaston/suzy-ai) architecture.
+
+It keeps owning audiovisual evidence and media timelines while feeding approved observations into SUZY//AI's single private world model instead of creating a second cultural-memory database.
+
+See [`docs/suzy-ai-integration.md`](docs/suzy-ai-integration.md).
+
 ## Architecture
 
 - [`docs/local-first.md`](docs/local-first.md)
