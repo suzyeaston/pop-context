@@ -1,5 +1,10 @@
 # POP//CONTEXT Architecture
 
+POP//CONTEXT is the audiovisual input component of SUZY//AI. This document covers
+the pipeline direction, including planned stages. The working v0.1 produces local
+media, transcripts, representative frames and evidence reports; later perception
+and shared interpretation stages are not yet implemented.
+
 ## Principle
 
 Do not ask one model to "understand the whole video."
@@ -83,9 +88,11 @@ Canonical record:
 
 Everything downstream should point back to timestamps/evidence.
 
-### 6. Cultural memory
+### 6. Shared cultural memory in SUZY//AI
 
-The cultural layer connects observations with entities and relationships:
+An approved transfer into SUZY//AI is planned. Cultural memory belongs to the
+shared core; this pipeline should not maintain a competing memory database.
+That shared layer can connect observations with entities and relationships:
 
 ```text
 object / lyric / phrase / sound / person
@@ -97,7 +104,11 @@ work ↔ artist ↔ era ↔ event ↔ meme ↔ usage ↔ association
 
 This should be retrieval-based and inspectable rather than hidden inside one giant prompt.
 
-### 7. Interpretation
+### 7. Interpretation through SUZY//AI
+
+Future interpretation should use shared SUZY//AI inference and relevant memory,
+with this pipeline retaining the evidence references. See the
+[integration boundary](suzy-ai-integration.md).
 
 Return separate fields for:
 

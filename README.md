@@ -1,8 +1,8 @@
 # POP//CONTEXT
 
-**Teach machines to hear culture, not just words.**
+**The audiovisual input pipeline for SUZY//AI.**
 
-POP//CONTEXT is a public, local-first experiment by [Suzy Easton](https://www.suzyeaston.ca/) exploring how software might understand audiovisual material as **cultural meaning**, rather than treating video as a transcript with pictures attached.
+POP//CONTEXT is the local audiovisual input component of [SUZY//AI](https://github.com/suzyeaston/suzy-ai), the music and cultural-intelligence project by [Suzy Easton](https://www.suzyeaston.ca/). It prepares inspectable media evidence for a shared system of memory, interpretation, and developing musical taste. The pipeline lives in its own repository so its media tools can be developed and run independently.
 
 ## Current milestone: local evidence pipeline
 
@@ -70,9 +70,9 @@ workspace/<video-id>/
 
 ## SUZY//AI
 
-POP//CONTEXT is the **observer** inside the broader [SUZY//AI](https://github.com/suzyeaston/suzy-ai) architecture.
+POP//CONTEXT owns media ingest, timestamped evidence and the local evidence report. Shared memory, cultural interpretation and musical taste belong to SUZY//AI. Approved media observations are intended to join the context supplied by threads, album reviews and musical examples.
 
-It keeps owning audiovisual evidence and media timelines while feeding approved observations into SUZY//AI's single private world model instead of creating a second cultural-memory database.
+That transfer is not automated today. Running this pipeline produces local files; it does not write to SUZY//AI memory or publish observations. The core currently supports text inference and retrieval, with world teachings stored separately. There is no second cultural-memory database planned here.
 
 See [`docs/suzy-ai-integration.md`](docs/suzy-ai-integration.md).
 
@@ -88,9 +88,12 @@ See [`docs/suzy-ai-integration.md`](docs/suzy-ai-integration.md).
 3. semantic non-speech audio
 4. visual-language perception
 5. synchronized multimodal timeline
-6. cultural memory / retrieval
-7. evidence-based interpretation
-8. public demonstration interface
+6. approved evidence transfer into SUZY//AI
+7. evidence-based interpretation through SUZY//AI shared memory and inference
+8. selected public demonstration interface
+
+Steps after the current milestone are planned. Cultural memory and developing
+musical taste are shared SUZY//AI work, supported by this input pipeline.
 
 ## Public site
 
